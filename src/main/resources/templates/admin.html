@@ -1,0 +1,169 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/adminStyles.css">
+
+    <style>
+        header {
+
+            color: white;
+            background-color: #0F70B7;
+        }
+
+
+        body{
+            --link-color-active: white;
+            --link-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #0F70B7;
+
+
+        }
+
+        button {
+            width: 370px;
+            padding: 12px;
+            background-color: #dcdcdc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .mainclass {
+
+
+            font-family: 'Montserrat', sans-serif;
+            background-size: cover;
+            background-position: center;
+
+            margin: auto;
+            margin-top: 100px;
+            margin-bottom: 100px;
+
+        }
+
+
+
+        .offers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+        .offer-continer {
+            background-color: aliceblue;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .offer-continer:hover {
+            box-shadow: 4px 2px 20px rgb(255, 255, 255);
+
+        }
+
+        #Off1 {
+
+
+            padding: 10px;
+
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #a7e9f8;
+        }
+
+
+    </style>
+    <title>login</title>
+</head>
+<body>
+
+
+<!-- Header Section -->
+<header>
+    <div class="logo"><a href="../html/index.html">
+        <img src="/upload/logo-white.png" alt="logo" height="60px" href="#">
+    </a>
+
+    </div>
+    <div class="menu">
+        <nav>
+            <ul>
+                <li><a href="/addCard" >Add New Card </a></li>
+                <li><a href="/index.html">home</a></li>
+                <li><a href="/products">Go Products</a></li>
+                <li>  Welcome Admin </li>
+
+
+
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="goofferBanner" style="width:300px; margin:0 auto;" ></div>
+    <section  class="offers">
+        <div th:each="card : ${cards}" class="offer-continer">
+            <div class="imgoffer">
+                <div id="Off1" >   <img th:src="@{${card.imageUrl}}" alt="Card Image" width="300" />      </div>
+            </div>
+            <div class="description"><h3 th:text="${card.creditName}"></h3><h4 th:text="${card.bonus}"></h4 > <h4 th:text="${card.description}"></h4 ></div>
+
+
+
+
+            <button  >  <a th:href="@{/editCard/{id}(id=${card.id})}"><h3 >EDIT</h3></a></button>
+            <button >   <a th:href="@{/deleteCard/{id}(id=${card.id})}"><h3>DELETE </h3></a> </button>
+
+
+
+
+
+        </div>
+
+
+    </section>
+</main>
+
+
+
+
+
+
+<script src="../javascript/loginValidation.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

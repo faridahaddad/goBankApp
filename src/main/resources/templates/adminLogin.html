@@ -1,0 +1,131 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/adminStyles.css">
+
+    <style>
+        header {
+
+            color: white;
+            background-color: #0F70B7;
+        }
+
+
+        body{
+            color: white;
+            --link-color-active: white;
+            --link-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #0F70B7;
+
+
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #dcdcdc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .mainclass {
+
+
+            font-family: 'Montserrat', sans-serif;
+            background-size: cover;
+            background-position: center;
+
+            margin: auto;
+            margin-top: 100px;
+            margin-bottom: 100px;
+
+        }
+
+
+
+
+
+
+
+
+
+
+    </style>
+    <title>login</title>
+</head>
+<body>
+
+
+<!-- Header Section -->
+<header>
+    <div class="logo"><a href="../html/index.html">
+        <img src="/upload/logo-white.png" alt="logo" height="60px" href="#">
+    </a>
+
+    </div>
+
+</header>
+
+<main class="mainclass">
+    <div class="loginct">
+        <div class="login-box">
+            <!-- <div class="imagelog"> -->
+
+        </div>
+        <form id="loginForm" action="../html/Go.html">
+            <h2>Login</h2>
+            <input type="text" id="name" placeholder="E-mail" >
+            <div class="error-message" id="nameError">Please enter your E-mail.</div>
+
+            <input type="password" id="password" placeholder=" Password" >
+            <div class="error-message" id="passwordError">Password must be at least 8
+                characters long and contain at least one uppercase letter, one lowercase letter, and one digit.</div>
+
+            <button type="submit" id="submit">Login</button>
+            <P>Create new account <a href="../html/signup.html" id="signbtn">signup</a></P>
+
+
+        </form>
+    </div>
+    </div>
+
+
+</main>
+
+
+
+
+
+<script src="../javascript/loginValidation.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

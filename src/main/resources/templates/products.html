@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Styles.css">
+
+    <style>
+
+
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #0F70B7;
+
+
+        }
+
+        .mainclass {
+
+
+            font-family: 'Montserrat', sans-serif;
+            background-size: cover;
+            background-position: center;
+
+            margin: auto;
+            margin-top: 100px;
+            margin-bottom: 100px;
+
+        }
+
+
+
+        .offers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 600px) {
+            .offers {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+
+        .offer-continer {
+            background-color: aliceblue;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .offer-continer:hover {
+            box-shadow: 4px 2px 20px rgb(255, 255, 255);
+
+        }
+
+        #Off1 {
+
+
+            padding: 10px;
+
+        }
+
+    </style>
+    <title>login</title>
+</head>
+<body>
+
+
+<!-- Header Section -->
+<header>
+    <div class="logo"><a href="../html/index.html">
+        <img src="/upload/logo.png" alt="logo" height="70px" href="#">
+    </a>
+    </div>
+    <div class="menu">
+        <nav>
+            <ul>
+                <li><a href="../html/index.html">home</a></li>
+                <li><a href="../html/products.html">Go Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="/adminLogin">Login</a></li>
+                <li><a href="/admin">Admin</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="banner" >
+    <img src="/upload/bann.png" height="330">
+</div>
+
+<main>
+    <div class="goofferBanner" style="width:300px; margin:0 auto;" ></div>
+    <section  class="offers">
+        <div th:each="card : ${cards}" class="offer-continer">
+            <div class="imgoffer">
+                <div id="Off1" >   <img th:src="@{${card.imageUrl}}" alt="Card Image" width="300" />      </div>
+            </div>
+            <div class="description"><h3 th:text="${card.creditName}"></h3><h4 th:text="${card.bonus}"></h4 > <h4 th:text="${card.description}"></h4 ></div>
+            <button > Apply </button>
+        </div>
+
+
+    </section>
+</main>
+
+
+
+<!-- Footer Section -->
+<footer class="footer">
+
+</footer>
+
+
+
+<script src="../javascript/loginValidation.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
