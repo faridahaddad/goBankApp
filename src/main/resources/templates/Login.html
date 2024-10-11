@@ -81,12 +81,14 @@
             <!-- <div class="imagelog"> -->
 
         </div>
-        <form id="loginForm" action="../html/Go.html">
+        <form id="loginForm" action="/adminDashboard" method="POST">
+            <!-- Add CSRF token if using POST -->
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
             <h2>Login</h2>
-            <input type="text" id="name" placeholder="E-mail" >
+            <input type="text" id="name" placeholder="E-mail" name="email" >
             <div class="error-message" id="nameError">Please enter your E-mail.</div>
 
-            <input type="password" id="password" placeholder=" Password" >
+            <input type="password" id="password" placeholder=" Password" name="password" >
             <div class="error-message" id="passwordError">Password must be at least 8
                 characters long and contain at least one uppercase letter, one lowercase letter, and one digit.</div>
 
@@ -105,7 +107,7 @@
 
 
 
-<script src="../javascript/loginValidation.js"></script>
+
 </body>
 </html>
 
